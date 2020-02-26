@@ -1,0 +1,73 @@
+To install git -     Sudo apt install git
+root@goorm:~# git --version
+git version 2.17.1
+root@goorm:~# git config --global user.name "Pinky"
+root@goorm:~# git config --global user.email pinkywilliams90@gmail.com
+root@goorm:~# git config --list
+user.name=Pinky
+user.email=pinkywilliams90@gmail.com
+root@goorm:/home/myproject# git config --global color.ui
+root@goorm:/home/myproject# ls
+root@goorm:/home/myproject# git init
+Initialized empty Git repository in /home/myproject/.git/
+root@goorm:/home/myproject# ls
+root@goorm:/home/myproject# ls -a
+.  ..  .git
+root@goorm:/home/myproject# git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        readme.md
+        samplefile1
+
+nothing added to commit but untracked files present (use "git add" to track)
+root@goorm:/home/myproject# git add .
+root@goorm:/home/myproject# git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+        new file:   readme.md
+        new file:   samplefile1
+
+root@goorm:/home/myproject# git commit -m "first commit"
+[master (root-commit) c60db92] first commit
+ 2 files changed, 2 insertions(+)
+ create mode 100644 readme.md
+ create mode 100644 samplefile1
+root@goorm:/home/myproject(master)# git status
+On branch master
+nothing to commit, working tree clean
+
+root@goorm:/home/myproject(master)# git log
+commit c60db92a090f958d00ead8268aac3b005161170d (HEAD -> master)
+Author: Pinky <pinkywilliams90@gmail.com>
+Date:   Tue Feb 25 13:48:12 2020 +0000
+
+    first commit
+root@goorm:/home/myproject(master)# git log --graph
+* commit c60db92a090f958d00ead8268aac3b005161170d (HEAD -> master)
+  Author: Pinky <pinkywilliams90@gmail.com>
+  Date:   Tue Feb 25 13:48:12 2020 +0000
+
+      first commit
+root@goorm:/home/myproject(master)# git log  --pretty=oneline
+c60db92a090f958d00ead8268aac3b005161170d (HEAD -> master) first commit
+root@goorm:/home/myproject(master)# git remote add origin "https://github.com/pinkywilliams/Pinky.git"
+root@goorm:/home/myproject(master)# git push origin master
+Username for 'https://github.com': pinkywilliams
+Password for 'https://pinkywilliams@github.com':
+Counting objects: 4, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (4/4), 318 bytes | 318.00 KiB/s, done.
+Total 4 (delta 0), reused 0 (delta 0)
+To https://github.com/pinkywilliams/Pinky.git
+ * [new branch]      master -> master
